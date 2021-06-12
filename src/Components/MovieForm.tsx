@@ -12,28 +12,42 @@ const MovieForm = () => {
 
   const handleTitle = (e: any) => {
     setMovieTitle(e.target.value);
-  }
+  };
 
   const handleGenre = (e: any) => {
     setMovieGenre(e.target.value);
-  }
+  };
 
   const addMovie = (e: any) => {
     e.preventDefault();
-    movieRef.add({title: movieTitle, genre: movieGenre});
+    movieRef.add({ title: movieTitle, genre: movieGenre });
     setMovieGenre("");
     setMovieTitle("");
-  }
+  };
 
   return (
-    <Paper className = "movie-form">
+    <Paper className="movie-form">
       <form onSubmit={addMovie}>
-        <TextField required label="Movie Title" onChange={(e)=> handleTitle(e)} value={movieTitle} />
-        <TextField required label="Movie Genre" onChange={(e)=> handleGenre(e)} value={movieGenre} />
-        <Button type = "submit">Add</Button>
+        <TextField
+          className="text-field"
+          required
+          label="Movie Title"
+          onChange={(e) => handleTitle(e)}
+          value={movieTitle}
+          name="Movie Title"
+        />
+        <TextField
+          required
+          label="Movie Genre"
+          onChange={(e) => handleGenre(e)}
+          value={movieGenre}
+          name="Movie Genre"
+        />
+        <br />
+        <Button type="submit">Add</Button>
       </form>
     </Paper>
-  )
-}
+  );
+};
 
 export default MovieForm;

@@ -1,6 +1,6 @@
 import "firebase/firestore";
 import { useFirestore, useFirestoreCollectionData } from "reactfire";
-import CheckIcon from '@material-ui/icons/Check';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -29,7 +29,7 @@ const MovieList = () => {
           <TableRow>
             <TableCell>Movie Title</TableCell>
             <TableCell>Movie Genre</TableCell>
-            <TableCell>Watched</TableCell>
+            <TableCell>Remove?</TableCell>
             <TableCell></TableCell>
           </TableRow>
         </TableHead>
@@ -42,7 +42,7 @@ const MovieList = () => {
                 </TableCell>
                 <TableCell>{movie.genre as string}</TableCell>
                 <TableCell>
-                  <CheckIcon
+                  <DeleteForeverIcon
                     className="deleteIcon"
                     onClick={() => deleteMovie(movie.NO_ID_FIELD as string)}
                   />

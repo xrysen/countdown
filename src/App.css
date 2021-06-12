@@ -1,10 +1,10 @@
 .deleteIcon:hover {
   cursor: pointer;
-  color: green;
+  color: red;
 }
 
 body {
-  background-color: darkblue;
+  background-color: #070841;
   text-align: center;
 }
 
@@ -24,4 +24,8 @@ h1 {
   margin-right: auto;
   margin-top: 50px;
   padding: 20px;
+}
+
+.text-field {
+  margin-right: 10px;
 }
