@@ -1,6 +1,6 @@
 import "firebase/firestore";
 import { useFirestore, useFirestoreCollectionData } from "reactfire";
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -8,6 +8,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const MovieList = () => {
   const movieRef = useFirestore().collection("movies");
@@ -19,7 +20,11 @@ const MovieList = () => {
   };
 
   if (status === "loading") {
-    return <p>Loading....</p>;
+    return (
+      <Paper className = "movie-table">
+        <CircularProgress />
+      </Paper>
+    );
   }
 
   return (
