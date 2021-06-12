@@ -18,10 +18,6 @@ const Movies = () => {
     setMovieGenre(e.target.value);
   };
 
-  const deleteMovie = async (id: string) => {
-    await movieRef.doc(id).delete();
-  };
-
   const addMovie = (e: any) => {
     e.preventDefault();
     movieRef.add({ title: movieTitle, genre: movieGenre });
