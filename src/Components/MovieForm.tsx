@@ -28,6 +28,7 @@ const MovieForm = () => {
   return (
     <Paper className="movie-form">
       <form onSubmit={addMovie}>
+        <h3>Add New Movie</h3>
         <TextField
           className="text-field"
           required
@@ -36,6 +37,7 @@ const MovieForm = () => {
           value={movieTitle}
           name="Movie Title"
         />
+        <br />
         <TextField
           required
           label="Movie Genre"
