@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "firebase/firestore";
 import { useFirestore, useFirestoreCollectionData } from "reactfire";
+import MovieList from "./MovieList";
 
 const Movies = () => {
   const movieRef = useFirestore().collection("movies");
   const movieQuery = movieRef.orderBy("title");
-  const { status, data } = useFirestoreCollectionData(movieQuery);
+  const { status } = useFirestoreCollectionData(movieQuery);
   const [movieTitle, setMovieTitle] = useState("");
   const [movieGenre, setMovieGenre] = useState("");
 
@@ -34,20 +35,7 @@ const Movies = () => {
 
   return (
     <div>
-      {data.map((movie) => {
-        return (
-          <div>
-            <p key={movie.NO_ID_FIELD as string}>{movie.title as string}</p>
-            {movie.id as string}
-            <button
-              key={movie.title as string}
-              onClick={() => deleteMovie(movie.NO_ID_FIELD as string)}
-            >
-              Watched!
-            </button>
-          </div>
-        );
-      })}
+      <MovieList />
 
       <form onSubmit={addMovie}>
         <input
