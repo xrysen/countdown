@@ -35,7 +35,6 @@ const MovieList = () => {
             <TableCell>Movie Title</TableCell>
             <TableCell>Movie Genre</TableCell>
             <TableCell>Remove?</TableCell>
-            <TableCell></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
